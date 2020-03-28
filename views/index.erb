@@ -1,0 +1,47 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Japanese vs Chinese Font</title>
+		<meta name="description" content="Are you sure your computer uses Japanese (or Chinese) font? Have a check!">
+		<meta name="author" content="Przemysław Buczkowski">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" href="style.css">
+	</head>
+	<body>
+		<header>
+          <h1>Japanese vs Chinese fonts</h1>
+          <h2>Are you sure your device got it right?</h2>
+          <p>Traditional Chinese? Japanese? Kyuujitai? Maybe&nbsp;<a href="https://en.wikipedia.org/wiki/Ch%E1%BB%AF_N%C3%B4m">Vietnamese</a>?</p>
+		</header>
+		<!--<nav>
+			<ul>
+				<li>Home</li>
+			</ul>
+        </nav>-->
+        <figure>
+          <div class="row">
+            <img src="<%= image_to_blob draw_one_character("ja", @character) %>" alt="Japanese rendering of <%= @character %>">
+              <img src="<%= image_to_blob draw_one_character("tw", @character) %>" alt="Traditional Chinese rendering of <%= @character %>">
+              <img src="<%= image_to_blob draw_one_character("cn", @character) %>" alt="Simplified Chinese rendering of <%= @character %>">
+              <div style="font-size: 90px;display: inline-block;vertical-align: 13px;width:100px;"><%= @character %></div>
+              <figcaption>Left to right: <a href="https://en.wikipedia.org/wiki/Kanji">Kanji</a>, <a href="https://en.wikipedia.org/wiki/Traditional_Chinese_characters">Traditional</a>, <a href="https://en.wikipedia.org/wiki/Simplified_Chinese_characters">Simplified</a>, and&nbsp;your&nbsp;device's&nbsp;rendering.</figcaption>
+          </div>
+        </figure>
+        <form method="GET">
+          <% '返糸紛令刃海角骨化免雇空'.split('').each do |ch| %>
+            <a href="?character=<%= ch %>"><%= ch %></a>
+          <% end %>
+          <br>
+          <input type="text" name="character" minlength="1" maxlength="1">
+          <button type="submit">Render</button>
+        </form>
+        <p>Systems using Chinese characters are called hanzi, kanji, or hancha, depending on the language talked about. Moreover, People's Republic of China ordered simplification of them, leading to systems called Traditional and Simplified.</p>
+        <p>It's often said that kanji used by Japanese are similar to Traditional Chinese characters but it's only kind of true &ndash; Japanese has also undergone <a href="https://en.wikipedia.org/wiki/Shinjitai">simplification</a>, albeit much less extensive. More confusingly, some Chinese characters (more specifically <a href="https://en.wikipedia.org/wiki/Radical_(Chinese_characters)">radicals</a>, that is components of characters) are the same between Traditional and Simplified Chinese but different in Japanese (<a href="?character=糸">糸</a>). Some others are the same in Simplified and Japanese (<a href="?character=道">道</a>) while the others look different in all three (<a href="?character=雇">雇</a>)!</p>
+        <p>To add to the confusion, your computer, smartphone or even dumbphone stores them <em>all the same</em>! The only difference being the font used to render them. (That caused a lot of <a href="https://en.wikipedia.org/wiki/Han_unification#Rationale_and_controversy">shitstorm</a> back in the day.)</p>
+        <p>And since our smartphones are not so smart, learners of Japanese (and probably the other languages? let me know) go through three stages: 1) how come my phone dictionary/movie player/browser displays these characters weird; 2) fighting with the device to change the font; 3) cursing severely when that one application somehow still gets it wrong. Or when you get a new device. Or when your browser uses Traditional Chinese in tab titles but Japanese in the content. Happened to me today.</p>
+        <p>This site has already got you out of stage 1! While you're still curious, you can use the tool at the top to display any character you want in the three versions and try out some especially interesting ones! Care to try?</p>
+	</body>
+</html>
+
+
