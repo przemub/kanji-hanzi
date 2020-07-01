@@ -1,3 +1,5 @@
+#!/usr/bin/env ruby
+
 require 'rubygems'
 require 'bundler/setup'
 
@@ -15,3 +17,4 @@ get '/' do
   @character = @character[0]
   erb :index
 end
+
