@@ -6,12 +6,12 @@ git_source(:github) {|repo_name| "https://github.com/#{repo_name}" }
 
 # gem "rails"
 
-gem "sinatra", "~> 2.2"
+gem "sinatra", "~> 4.0"
 
-gem "rmagick", "~> 5.3"
+gem "rmagick", "~> 6.0"
 
-gem "rerun", "~> 0.13.0"
+gem "puma", "~> 6.4"
 
-gem "puma", "~> 5.6"
+gem "base64", "~> 0.2.0"
 
-gem "rack", "~> 2.2"
+gem "rackup", "~> 2.1"

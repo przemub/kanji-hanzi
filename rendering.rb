@@ -15,19 +15,19 @@ def get_font(language)
 end
 
 def draw_one_character(language, character)
-  tmp_image = Image.new(100, 100) {
-    self.format = 'PNG'
-    self.background_color = "Transparent"
+  tmp_image = Image.new(100, 100) { |image|
+    image.format = 'PNG'
+    image.background_color = "Transparent"
   }
 
   text = Draw.new
-  text.annotate(tmp_image, 100, 100, 0, 0, character) {
-    self.font = get_font language
-    self.fill = 'white'
-    self.stroke = 'transparent'
-    self.pointsize = 90
-    self.font_weight = BoldWeight
-    self.gravity = CenterGravity
+  text.annotate(tmp_image, 100, 100, 0, 0, character) { |annotation|
+    annotation.font = get_font language
+    annotation.fill = 'white'
+    annotation.stroke = 'transparent'
+    annotation.pointsize = 90
+    annotation.font_weight = BoldWeight
+    annotation.gravity = CenterGravity
   }
 
   tmp_image

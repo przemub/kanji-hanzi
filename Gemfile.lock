@@ -1,43 +1,45 @@
 GEM
   remote: https://rubygems.org/
   specs:
-    ffi (1.12.2)
-    listen (3.2.1)
-      rb-fsevent (~> 0.10, >= 0.10.3)
-      rb-inotify (~> 0.9, >= 0.9.10)
-    mustermann (2.0.2)
+    base64 (0.2.0)
+    mustermann (3.0.2)
       ruby2_keywords (~> 0.0.1)
     nio4r (2.7.3)
+    observer (0.1.2)
     pkg-config (1.5.6)
-    puma (5.6.8)
+    puma (6.4.2)
       nio4r (~> 2.0)
-    rack (2.2.8.1)
-    rack-protection (2.2.3)
-      rack
-    rb-fsevent (0.10.3)
-    rb-inotify (0.10.1)
-      ffi (~> 1.0)
-    rerun (0.13.0)
-      listen (~> 3.0)
-    rmagick (5.3.0)
+    rack (3.1.7)
+    rack-protection (4.0.0)
+      base64 (>= 0.1.0)
+      rack (>= 3.0.0, < 4)
+    rack-session (2.0.0)
+      rack (>= 3.0.0)
+    rackup (2.1.0)
+      rack (>= 3)
+      webrick (~> 1.8)
+    rmagick (6.0.1)
+      observer (~> 0.1)
       pkg-config (~> 1.4)
     ruby2_keywords (0.0.5)
-    sinatra (2.2.3)
-      mustermann (~> 2.0)
-      rack (~> 2.2)
-      rack-protection (= 2.2.3)
+    sinatra (4.0.0)
+      mustermann (~> 3.0)
+      rack (>= 3.0.0, < 4)
+      rack-protection (= 4.0.0)
+      rack-session (>= 2.0.0, < 3)
       tilt (~> 2.0)
-    tilt (2.0.11)
+    tilt (2.4.0)
+    webrick (1.8.1)
 
 PLATFORMS
   ruby
 
 DEPENDENCIES
-  puma (~> 5.6)
-  rack (~> 2.2)
-  rerun (~> 0.13.0)
-  rmagick (~> 5.3)
-  sinatra (~> 2.2)
+  base64 (~> 0.2.0)
+  puma (~> 6.4)
+  rackup (~> 2.1)
+  rmagick (~> 6.0)
+  sinatra (~> 4.0)
 
 BUNDLED WITH
-   2.1.4
+   2.5.11
